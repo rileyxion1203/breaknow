@@ -1,0 +1,44 @@
+{
+  "manifest_version": 3,
+  "name": "Break Now - Simple Meditation Timer to relieve work stress",
+  "version": "1.4",
+  "description": "This application helps reduce workplace stress through customizable break reminders and guided meditation sessions.",
+  "permissions": [
+    "alarms",
+    "notifications",
+    "storage",
+    "activeTab",
+    "scripting",
+    "tabs"
+  ],
+  "host_permissions": ["<all_urls>"],
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "sounds/meditation_music.mp3",
+        "content/force_reminder.css",
+        "content/main_timer_banner.css",
+        "images/mindful_image.png",
+        "images/lotus_flower.png",
+        "meditation/meditation.html"
+      ],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

@@ -1,0 +1,278 @@
+/* content/force_reminder.css (v2.0 - redesigned dark theme) */
+#meditation-full-overlay {
+  position: fixed !important; top: 0 !important; left: 0 !important;
+  width: 100vw !important; height: 100vh !important;
+  background:
+    radial-gradient(circle at 50% 40%, rgba(232,168,124,0.06), transparent 45%),
+    linear-gradient(180deg, #10101d 0%, #0d0d1a 100%) !important;
+  color: #f0ece2 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  z-index: 2147483647 !important;
+  font-family: "Avenir Next", "Segoe UI", "Helvetica Neue", sans-serif !important;
+  text-align: center !important;
+  padding: 20px !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+}
+
+/* Breathing glow behind ring */
+#meditation-full-overlay::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 50% !important; left: 50% !important;
+  width: 420px !important; height: 420px !important;
+  transform: translate(-50%, -55%) !important;
+  border-radius: 50% !important;
+  background: radial-gradient(circle, rgba(232,168,124,0.07) 0%, transparent 70%) !important;
+  pointer-events: none !important;
+  animation: glowPulse 7s ease-in-out infinite !important;
+}
+@keyframes glowPulse {
+  0%, 100% { opacity: 0.5; transform: translate(-50%, -55%) scale(1); }
+  50% { opacity: 1; transform: translate(-50%, -55%) scale(1.15); }
+}
+
+/* Fade-in */
+@keyframes meditationFadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+#meditation-full-overlay .meditation-main-wrap {
+  animation: meditationFadeUp 0.8s ease-out !important;
+  display: flex !important; flex-direction: column !important; align-items: center !important;
+  position: relative !important; z-index: 1 !important;
+}
+
+/* Title - subtle uppercase label */
+#meditation-main-title {
+  display: block !important;
+  min-width: 0 !important; min-height: 0 !important; padding: 0 !important;
+  font-size: clamp(18px, 1.8vw, 22px) !important;
+  font-weight: 400 !important;
+  line-height: 1.2 !important;
+  letter-spacing: 0.18em !important;
+  text-transform: uppercase !important;
+  margin: 0 0 40px 0 !important;
+  color: rgba(240,236,226,0.50) !important;
+  text-align: center !important;
+  position: relative !important;
+  background: transparent !important;
+  border: none !important; border-radius: 0 !important;
+  text-shadow: none !important;
+}
+
+/* ── Ring container ── */
+.meditation-ring-container {
+  position: relative !important;
+  width: 320px !important; height: 320px !important;
+  margin-bottom: 48px !important;
+}
+
+.meditation-ring-container svg {
+  position: absolute !important; top: 0 !important; left: 0 !important;
+  width: 100% !important; height: 100% !important;
+  transform: rotate(-90deg) !important;
+}
+
+.meditation-ring-bg {
+  fill: none !important;
+  stroke: rgba(240,236,226,0.06) !important;
+  stroke-width: 3 !important;
+}
+
+.meditation-ring-progress {
+  fill: none !important;
+  stroke: #e8a87c !important;
+  stroke-width: 3 !important;
+  stroke-linecap: round !important;
+  transition: stroke-dashoffset 1s linear !important;
+  filter: drop-shadow(0 0 8px rgba(232,168,124,0.3)) !important;
+}
+
+/* Inner content centered in ring */
+.meditation-ring-inner {
+  position: absolute !important; top: 50% !important; left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  display: flex !important; flex-direction: column !important;
+  align-items: center !important; justify-content: center !important;
+}
+
+/* Timer display - large digits inside ring */
+#meditation-timer-display {
+  font-size: 42px !important;
+  font-weight: 300 !important;
+  letter-spacing: 4px !important;
+  color: rgba(240,236,226,0.92) !important;
+  min-height: 0 !important;
+  position: relative !important;
+  text-transform: none !important;
+  font-variant-numeric: tabular-nums !important;
+  margin: 0 !important;
+}
+
+/* Focus image inside ring */
+#meditation-focus-image {
+  width: 140px !important;
+  max-width: 140px !important;
+  height: 140px !important;
+  max-height: 140px !important;
+  object-fit: contain !important;
+  margin-bottom: 16px !important;
+  border-radius: 50% !important;
+  opacity: 0.85 !important;
+  position: relative !important;
+  border: none !important;
+  padding: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Mute button — top right */
+#meditation-mute-button {
+  position: absolute !important;
+  top: 24px !important; right: 24px !important;
+  width: 36px !important; height: 36px !important;
+  background: rgba(255,255,255,0.04) !important;
+  border: 0.5px solid rgba(255,255,255,0.08) !important;
+  border-radius: 50% !important;
+  color: rgba(240,236,226,0.35) !important;
+  font-size: 16px !important;
+  cursor: pointer !important;
+  display: flex !important; align-items: center !important; justify-content: center !important;
+  padding: 0 !important; min-width: unset !important;
+  transition: all 0.2s ease !important;
+}
+#meditation-mute-button:hover {
+  background: rgba(255,255,255,0.1) !important;
+  color: rgba(240,236,226,0.7) !important;
+}
+
+/* Actions container */
+.meditation-actions {
+  display: flex !important; flex-direction: column !important;
+  align-items: center !important; gap: 14px !important;
+}
+
+/* Primary button (Back to Work / Done) */
+#meditation-close-button {
+  padding: 14px 44px !important;
+  font-size: 0.95rem !important;
+  font-family: "Avenir Next", "Segoe UI", "Helvetica Neue", sans-serif !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.04em !important;
+  margin-top: 0 !important;
+  background: rgba(240,236,226,0.08) !important;
+  color: rgba(240,236,226,0.75) !important;
+  border: 1px solid rgba(240,236,226,0.10) !important;
+  border-radius: 999px !important;
+  cursor: pointer !important;
+  transition: all 0.22s ease !important;
+  min-width: unset !important;
+  position: relative !important;
+}
+#meditation-close-button:hover {
+  background: rgba(240,236,226,0.14) !important;
+  color: rgba(240,236,226,0.95) !important;
+  transform: translateY(-1px) !important;
+}
+
+/* Grace button - text link style */
+#meditation-grace-button {
+  padding: 0 !important; margin: 0 !important;
+  background: none !important;
+  border: none !important;
+  color: rgba(232,168,124,0.7) !important;
+  font-size: 0.92rem !important;
+  font-family: "Avenir Next", "Segoe UI", "Helvetica Neue", sans-serif !important;
+  letter-spacing: 0.02em !important;
+  cursor: pointer !important;
+  transition: color 0.2s ease !important;
+  min-width: unset !important;
+}
+#meditation-grace-button:hover {
+  color: #e8a87c !important;
+  background: none !important;
+  border: none !important;
+  transform: none !important;
+}
+
+/* Grace reminder */
+#meditation-grace-reminder {
+  position: fixed !important;
+  top: 18px !important; right: 18px !important;
+  left: auto !important;
+  transform: none !important;
+  background-color: rgba(22,22,40,0.96) !important;
+  -webkit-backdrop-filter: blur(24px) !important;
+  backdrop-filter: blur(24px) !important;
+  color: #f0ece2 !important;
+  padding: 28px 32px !important;
+  border: 0.5px solid rgba(232,168,124,0.10) !important;
+  border-radius: 14px !important;
+  z-index: 2147483647 !important;
+  font-family: "Avenir Next", "Segoe UI", "Helvetica Neue", sans-serif !important;
+  font-size: 12.6px !important;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.4) !important;
+  min-width: 270px !important;
+  max-width: 300px !important;
+  text-align: center !important;
+}
+#meditation-grace-reminder p {
+  margin: 0 0 10px 0 !important; line-height: 1.5 !important;
+  color: rgba(240,236,226,0.55) !important;
+}
+#meditation-grace-reminder div#grace-timer-display {
+  font-weight: 300 !important; font-size: 25.2px !important;
+  letter-spacing: 2px !important; margin-bottom: 14px !important; color: #e8a87c !important;
+  font-variant-numeric: tabular-nums !important;
+}
+#meditation-start-now-button {
+  background-color: #e8a87c !important; color: #1a1a2e !important;
+  border: none !important; padding: 7px 11px !important;
+  border-radius: 8px !important; font-size: 0.9em !important;
+  font-weight: 600 !important; cursor: pointer !important;
+  font-family: "Avenir Next", "Segoe UI", "Helvetica Neue", sans-serif !important;
+  min-width: 162px !important;
+  transition: all 0.2s ease !important;
+}
+#meditation-start-now-button:hover { background-color: #d4956a !important; transform: translateY(-1px) !important; }
+
+/* Confirm leave modal */
+#meditation-confirm-leave-modal {
+  position: absolute !important; top: 50% !important; left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  background-color: rgba(22,22,40,0.96) !important;
+  -webkit-backdrop-filter: blur(24px) !important;
+  backdrop-filter: blur(24px) !important;
+  color: #f0ece2 !important;
+  padding: 32px 38px !important; border-radius: 16px !important;
+  box-shadow: 0 16px 48px rgba(0,0,0,0.5) !important;
+  z-index: 10 !important; min-width: 320px !important; max-width: 400px !important;
+  box-sizing: border-box !important; text-align: center !important;
+  border: 0.5px solid rgba(232,168,124,0.10) !important;
+}
+#meditation-confirm-leave-modal p {
+  font-size: 1rem !important; line-height: 1.65 !important;
+  margin: 0 0 28px 0 !important; color: rgba(240,236,226,0.65) !important;
+}
+.confirm-leave-buttons { display: flex !important; justify-content: center !important; gap: 12px !important; }
+#meditation-confirm-leave-modal button {
+  padding: 12px 0 !important; font-size: 0.9rem !important; border-radius: 999px !important;
+  cursor: pointer !important; width: 120px !important; font-weight: 600 !important;
+  font-family: "Avenir Next", "Segoe UI", "Helvetica Neue", sans-serif !important;
+  border: none !important; min-width: unset !important;
+  transition: all 0.2s ease !important;
+}
+#meditation-confirm-leave-modal button:first-child {
+  background-color: #e8a87c !important; color: #1a1a2e !important;
+}
+#meditation-confirm-leave-modal button:first-child:hover { background-color: #d4956a !important; transform: translateY(-1px) !important; }
+#meditation-confirm-leave-modal button:last-child {
+  background-color: rgba(255,255,255,0.06) !important; color: rgba(240,236,226,0.4) !important;
+}
+#meditation-confirm-leave-modal button:last-child:hover {
+  background-color: rgba(255,255,255,0.1) !important; color: rgba(240,236,226,0.7) !important;
+}

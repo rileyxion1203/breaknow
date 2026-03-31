@@ -1,0 +1,17 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Chrome extension build artifacts
+*.crx
+*.pem
+*.zip
+
+# Node (if ever added)
+node_modules/

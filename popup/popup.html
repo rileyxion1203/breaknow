@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mindful Break</title>
+  <meta charset="UTF-8">
+  <style>
+    body {
+      font-family: "Avenir Next", "Segoe UI", "Helvetica Neue", sans-serif;
+      width: 280px;
+      padding: 20px;
+      text-align: center;
+      background-color: #1a1a2e;
+      color: #f0ece2;
+      margin: 0;
+    }
+    h3 {
+      font-size: 1.3em;
+      margin-top: 0;
+      margin-bottom: 20px;
+      color: #f0ece2;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+    }
+    .settings {
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .settings label {
+      margin-right: 10px;
+      font-size: 0.9em;
+      color: rgba(240, 236, 226, 0.5);
+    }
+    input[type="number"] {
+      width: 60px;
+      padding: 8px;
+      text-align: center;
+      border: 1px solid rgba(232, 168, 124, 0.25);
+      border-radius: 8px;
+      font-size: 1em;
+      font-family: inherit;
+      color: #f0ece2;
+      background-color: rgba(255, 255, 255, 0.05);
+      outline: none;
+      transition: border-color 0.2s ease;
+      -moz-appearance: textfield;
+    }
+    input[type="number"]:focus {
+      border-color: #e8a87c;
+    }
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+      -webkit-appearance: none; margin: 0;
+    }
+    input[type="number"]:disabled {
+      background-color: rgba(255, 255, 255, 0.02);
+      color: rgba(240, 236, 226, 0.25);
+      border-color: rgba(255, 255, 255, 0.06);
+    }
+
+    .buttons-container {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 15px;
+    }
+
+    button {
+      padding: 10px 15px;
+      font-size: 0.9em;
+      font-family: inherit;
+      cursor: pointer;
+      border: none;
+      border-radius: 10px;
+      font-weight: 500;
+      min-width: 105px;
+      transition: all 0.2s ease;
+    }
+    button:hover { transform: translateY(-1px); }
+    button:active { transform: translateY(0px); }
+
+    #startButton {
+      background-color: #e8a87c;
+      color: #1a1a2e;
+    }
+    #startButton:disabled {
+      background-color: rgba(232, 168, 124, 0.25);
+      color: rgba(26, 26, 46, 0.5);
+      cursor: not-allowed;
+      transform: none;
+    }
+    #startButton:hover:not(:disabled) {
+      background-color: #d4956a;
+    }
+
+    #stopButton {
+      background-color: transparent;
+      color: rgba(240, 236, 226, 0.5);
+      border: 1px solid rgba(240, 236, 226, 0.12);
+    }
+    #stopButton:disabled {
+      color: rgba(240, 236, 226, 0.15);
+      border-color: rgba(240, 236, 226, 0.06);
+      cursor: not-allowed;
+      transform: none;
+    }
+    #stopButton:hover:not(:disabled) {
+      background-color: rgba(255, 255, 255, 0.05);
+      color: rgba(240, 236, 226, 0.8);
+      border-color: rgba(240, 236, 226, 0.25);
+    }
+
+    #status {
+      margin-top: 10px;
+      font-size: 0.85em;
+      color: #f1ae7b;
+      font-weight: 500;
+      min-height: 1.2em;
+    }
+
+  </style>
+</head>
+<body>
+  <h3>Mindful Break</h3>
+  <div class="settings">
+    <label for="interval">Remind every (minutes):</label>
+    <input type="number" id="interval" value="40" min="1">
+  </div>
+  <div class="buttons-container">
+    <button id="startButton">Start Timer</button>
+    <button id="stopButton">Stop Timer</button>
+  </div>
+  <div id="status"></div>
+  <script src="../shared/meditation_protocol.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

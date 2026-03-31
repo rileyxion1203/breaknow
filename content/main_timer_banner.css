@@ -1,0 +1,71 @@
+/* content/main_timer_banner.css (v1.2 - dark theme) */
+#mindful-break-main-timer-banner {
+  position: fixed !important;
+  top: 16px !important;
+  right: 16px !important;
+  bottom: auto !important;
+  left: auto !important;
+  background-color: rgba(26, 26, 46, 0.88) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  backdrop-filter: blur(12px) !important;
+  border: 0.5px solid rgba(232, 168, 124, 0.15) !important;
+  border-radius: 12px !important;
+  padding: 9px 16px !important;
+  z-index: 2147483646 !important;
+  font-family: "Avenir Next", "Segoe UI", "Helvetica Neue", sans-serif !important;
+  font-size: 14px !important;
+  min-width: 145px !important;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28) !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  opacity: 1;
+  cursor: pointer !important;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  transform: translateX(0);
+}
+
+#mindful-break-main-timer-banner::before {
+  content: '' !important;
+  display: block !important;
+  width: 6px !important; height: 6px !important;
+  border-radius: 50% !important;
+  background-color: #e8a87c !important;
+  flex-shrink: 0 !important;
+  animation: bannerPulse 2s ease-in-out infinite !important;
+}
+@keyframes bannerPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+#mindful-break-main-timer-banner.hidden {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transform: translateX(20px) !important;
+  transition: opacity 0.3s ease-in-out, visibility 0s linear 0.3s, transform 0.3s ease-in-out !important;
+}
+
+#mindful-break-main-timer-banner p {
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1 !important;
+  color: rgba(240, 236, 226, 0.88) !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.3px !important;
+}
+
+#mindful-break-main-timer-banner .banner-time {
+  color: #f3b27f !important;
+  font-weight: 600 !important;
+}
+
+#mindful-break-main-timer-banner:hover {
+  transform: translateY(-1px) !important;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.32) !important;
+}
+
+#mindful-break-main-timer-banner:focus-visible {
+  outline: 2px solid rgba(243, 178, 127, 0.8) !important;
+  outline-offset: 2px !important;
+}
