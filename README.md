@@ -7,7 +7,9 @@ Most break reminder tools send a notification you instantly dismiss. Break Now t
 
 <img width="2940" height="1680" alt="2757b6e8e57395b70445e2db2369d19e" src="https://github.com/user-attachments/assets/59e4b10d-4cfa-4c5d-a700-54947199da24" />
 
-<img width="2936" height="1740" alt="1a1373f87f1bfc82a47f5930483622c8" src="https://github.com/user-attachments/assets/8f75677e-a47a-47b6-bd00-3f8dc3c732bd" />
+
+<img width="2940" height="1668" alt="ba07b7ab17318a345cd18ba8180f85fd" src="https://github.com/user-attachments/assets/30e9486f-1d2b-465a-ab27-50a8fe0e3b27" />
+
 
 
 ## The Problem
