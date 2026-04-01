@@ -2,6 +2,9 @@
 
 A Chrome extension that reminds you to take mindful meditation breaks while working.
 
+<img width="2940" height="1680" alt="2757b6e8e57395b70445e2db2369d19e" src="https://github.com/user-attachments/assets/59e4b10d-4cfa-4c5d-a700-54947199da24" />
+<img width="2936" height="1740" alt="1a1373f87f1bfc82a47f5930483622c8" src="https://github.com/user-attachments/assets/8f75677e-a47a-47b6-bd00-3f8dc3c732bd" />
+
 ## What It Does
 
 Triggers a fullscreen meditation break every N minutes with an 8-minute guided session. Not ready? Request a 3-minute grace period (up to 2x). Cycle restarts automatically after each session.
